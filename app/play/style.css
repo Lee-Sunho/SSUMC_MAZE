@@ -1,0 +1,92 @@
+@font-face {
+  font-family: "DNFBitBitOTF";
+  src: url("/fonts/DNFBitBitOTF.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.Play {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 375px;
+  height: 812px;
+  background-color: #cef1f8;
+}
+
+@media (max-width: 500px) {
+  .Play {
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.timerContainer {
+  margin-top: 53px;
+  margin-bottom: 62px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 25px;
+  font-family: "DNFBitBitOTF";
+}
+
+.mazeContainer {
+  width: 327px;
+  height: 279px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  /*border: 1px solid black;*/
+  margin-bottom: 50px;
+}
+
+.controlArea {
+  display: flex;
+  gap: 18px;
+}
+
+.stack {
+  width: 120px;
+  height: 200px;
+  background-color: lightgray;
+}
+
+.cardList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 120px;
+  height: 200px;
+  background-color: lightgray;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.actionCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 30px;
+  font-size: 12px;
+  background-color: gray;
+  color: white;
+}
