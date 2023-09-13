@@ -9,9 +9,10 @@ interface IProps {
 
 const ActionCard = ({ action, onClick }: IProps) => {
   return (
-    <div onClick={() => onClick(action)} className="actionCard">
-      {action}
-    </div>
+    <div
+      onClick={() => onClick(action)}
+      className={`actionCard ${action}`}
+    ></div>
   );
 };
 
@@ -34,9 +35,13 @@ const ControlBox = () => {
         })}
       </div>
       <div className="cardList">
-        <ActionCard onClick={pushStack} action={ACTION.GO} />
-        <ActionCard onClick={pushStack} action={ACTION.TURNLEFT} />
-        <ActionCard onClick={pushStack} action={ACTION.TURNRIGHT} />
+        <div>
+          <span>행동카드</span>
+        </div>
+        <ActionCard onClick={pushStack} action={ACTION.UP} />
+        <ActionCard onClick={pushStack} action={ACTION.DOWN} />
+        <ActionCard onClick={pushStack} action={ACTION.LEFT} />
+        <ActionCard onClick={pushStack} action={ACTION.RIGHT} />
       </div>
     </div>
   );

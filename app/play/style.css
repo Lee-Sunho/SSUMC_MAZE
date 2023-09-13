@@ -36,6 +36,7 @@
   gap: 13px;
   font-size: 25px;
   font-family: "DNFBitBitOTF";
+  font-weight: 400;
 }
 
 .mazeContainer {
@@ -85,13 +86,13 @@
 
 .controlArea {
   display: flex;
-  gap: 18px;
+  gap: 30px;
 }
 
 .stack {
-  width: 120px;
-  height: 200px;
-  background-color: lightgray;
+  width: 30px;
+  height: 300px;
+  background-color: #d9d9d9;
 }
 
 .cardList {
@@ -100,25 +101,36 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  width: 120px;
-  height: 200px;
-  background-color: lightgray;
+  width: 254px;
+  height: 300px;
+  background-color: #d9d9d9;
 }
 
-.stack {
+.cardList > div {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
+  font-family: "DNFBitBitOTF";
+  font-size: 25px;
+  font-weight: 400;
 }
 
 .actionCard {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 30px;
-  font-size: 12px;
-  background-color: gray;
-  color: white;
+  width: 226px;
+  height: 39px;
+  border-radius: 10px;
+}
+
+.UP {
+  background-image: url("/assets/card_up.svg");
+}
+
+.DOWN {
+  background-image: url("/assets/card_down.svg");
+}
+
+.LEFT {
+  background-image: url("/assets/card_left.svg");
+}
+
+.RIGHT {
+  background-image: url("/assets/card_right.svg");
 }
