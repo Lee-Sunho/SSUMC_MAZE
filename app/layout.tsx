@@ -1,12 +1,8 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata = {
-  title: "SSUMC MAZE",
-  description: "SSUMC 대동제 주간부스 U家 탕후루 미로게임",
-};
 
 export default function RootLayout({
   children,
@@ -15,6 +11,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <title>SSUMC MAZE</title>
+        <meta
+          name="description"
+          content="SSUMC 대동제 주간부스 U家 탕후루 미로게임"
+        />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <body className={inter.className}>{children}</body>
     </html>
   );
