@@ -11,6 +11,7 @@ import {
   setStatusLose,
   setStatusWin,
   setPlyaerPosition,
+  increaseTimer,
 } from "../redux/controlSlice";
 
 /*
@@ -48,6 +49,10 @@ export default function Play() {
 
   const stack = useSelector<RootState, string[]>((state) => {
     return state.stack.stack;
+  });
+
+  const timer = useSelector<RootState, STATUS>((state) => {
+    return state.control.timer;
   });
 
   const gameStatus = useSelector<RootState, STATUS>((state) => {
@@ -97,7 +102,20 @@ export default function Play() {
       }, 500);
     }
   };
+  // 게임이 진행 중인 경우에만 타이머 동작
+  useEffect(() => {
+    let t: any;
+    if (gameStatus === STATUS.RUNNING) {
+      t = setInterval(() => {
+        dispatch(increaseTimer());
+      }, 1000);
+    }
+    return () => {
+      clearInterval(t);
+    };
+  }, [gameStatus]);
 
+  // 이동할때마다 게임 승리 여부 확인
   useEffect(() => {
     console.log(playerPosition, gameStatus);
     if (
@@ -113,7 +131,7 @@ export default function Play() {
       <div className="timerContainer">
         <div className="timer">
           <img src="/assets/time.svg" />
-          <span>00 : 00</span>
+          <span>{`${timer}초`}</span>
         </div>
       </div>
       <div style={backgroundStyle} className="mazeContainer">

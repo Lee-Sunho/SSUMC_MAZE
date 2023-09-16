@@ -43,9 +43,17 @@ const controlSlice = createSlice({
     setPlyaerPosition: (state, action) => {
       state.playerPostion = action.payload;
     },
+    increaseTimer: (state) => {
+      state.timer++;
+    },
   },
 });
 
-export const { startGame, setStatusWin, setStatusLose, setPlyaerPosition } =
-  controlSlice.actions;
+export const {
+  startGame,
+  setStatusWin,
+  setStatusLose,
+  setPlyaerPosition,
+  increaseTimer,
+} = controlSlice.actions;
 export default controlSlice.reducer;
