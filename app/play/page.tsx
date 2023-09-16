@@ -1,5 +1,6 @@
 "use client";
 import ControlBox from "../components/ControlBox";
+import { useRouter } from "next/navigation";
 import "./style.css";
 import { resetStack } from "../redux/stackSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -58,6 +59,21 @@ const maze3: string[][] = [
 ];
 
 export default function Play() {
+  const router = useRouter();
+
+  // 뒤로 가기 했다가 다시 게임화면으로 돌아오는 경우 홈 화면으로 전환
+  useEffect(() => {
+    const temp = sessionStorage.getItem("hasVisited");
+    const hasVisited = temp === "true";
+
+    if (hasVisited) {
+      router.replace("/");
+      sessionStorage.setItem("hasVisited", "false");
+    } else {
+      sessionStorage.setItem("hasVisited", "true");
+    }
+  }, [router]);
+
   const mazeType = useSelector<RootState, number>((state) => {
     return state.control.mazeType;
   });
