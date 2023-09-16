@@ -15,6 +15,6 @@ export enum STATUS {
 }
 
 export const DESTINATION: IPlayerPosition = {
-  y: 5,
+  y: 6,
   x: 4,
 };
