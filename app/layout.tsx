@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Providers } from "./redux/provider";
 import { Inter } from "next/font/google";
 import Head from "next/head";
 
@@ -21,7 +22,9 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
