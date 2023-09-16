@@ -1,6 +1,6 @@
 export enum ACTION {
-  UP = "UP",
-  DOWN = "DOWN",
-  LEFT = "LEFT",
-  RIGHT = "RIGHT",
+  UP = "U",
+  DOWN = "D",
+  LEFT = "L",
+  RIGHT = "R",
 }

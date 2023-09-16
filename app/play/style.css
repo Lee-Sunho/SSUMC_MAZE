@@ -121,18 +121,29 @@
   border-radius: 10px;
 }
 
-.UP {
+.U {
   background-image: url("/assets/card_up.svg");
 }
 
-.DOWN {
+.D {
   background-image: url("/assets/card_down.svg");
 }
 
-.LEFT {
+.L {
   background-image: url("/assets/card_left.svg");
 }
 
-.RIGHT {
+.R {
   background-image: url("/assets/card_right.svg");
+}
+
+.btn_container {
+  display: flex;
+  margin-top: 10px;
+  gap: 30px;
+}
+
+.btn_container > button {
+  padding-left: 10px;
+  padding-right: 10px;
 }

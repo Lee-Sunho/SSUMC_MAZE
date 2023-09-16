@@ -14,14 +14,14 @@ const stackSlice = createSlice({
   name: "stackSlice",
   initialState,
   reducers: {
-    push: (state, action) => {
+    pushStack: (state, action) => {
       state.stack.push(action.payload);
     },
-    reset: (state) => {
+    resetStack: (state) => {
       state.stack.length = 0;
     },
   },
 });
 
-export const { push, reset } = stackSlice.actions;
+export const { pushStack, resetStack } = stackSlice.actions;
 export default stackSlice.reducer;
