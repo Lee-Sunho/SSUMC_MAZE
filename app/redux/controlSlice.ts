@@ -13,12 +13,14 @@ export interface IPlayerPosition {
 
 export interface IControlState {
   status: STATUS;
+  mazeType: number;
   playerPostion: IPlayerPosition;
   timer: number;
 }
 
 const initialState: IControlState = {
   status: STATUS.READY,
+  mazeType: 0,
   playerPostion: { y: 0, x: 1 },
   timer: 0,
 };
@@ -29,7 +31,9 @@ const controlSlice = createSlice({
   reducers: {
     startGame: (state) => {
       state.status = STATUS.RUNNING;
-      (state.playerPostion = { y: 0, x: 1 }), (state.timer = 0);
+      state.mazeType = Math.floor(Math.random() * 3) + 1;
+      state.playerPostion = { y: 0, x: 1 };
+      state.timer = 0;
       console.log("game start");
     },
     setStatusWin: (state) => {

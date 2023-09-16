@@ -20,14 +20,15 @@ U - 위쪽 못감
 R - 오른쪽 못감
 D - 아래쪽 못감
 */
-const defaultMap: number[][] = [
-  [-3, -2, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, -1, -4],
-];
+
+const defaultMaze: string[][] = [];
+for (let i = 0; i < 6; i++) {
+  const row = [];
+  for (let j = 0; j < 6; j++) {
+    row.push("");
+  }
+  defaultMaze.push(row);
+}
 
 const maze1: string[][] = [
   ["LUD", "UR", "LU", "U", "UD", "UR"],
@@ -38,14 +39,65 @@ const maze1: string[][] = [
   ["LRD", "LD", "UD", "UD", "O", "URD"],
 ];
 
+const maze2: string[][] = [
+  ["LUD", "UD", "U", "UD", "U", "URD"],
+  ["LU", "UD", "RD", "LU", "D", "UR"],
+  ["LD", "URD", "LUD", "R", "LUD", "RD"],
+  ["LU", "UD", "UD", "D", "UD", "UR"],
+  ["LRD", "LU", "UD", "UD", "U", "RD"],
+  ["LUD", "D", "UD", "URD", "LD", "URD"],
+];
+
+const maze3: string[][] = [
+  ["LU", "URD", "LU", "UD", "U", "UR"],
+  ["LR", "LU", "RD", "LU", "D", "RD"],
+  ["L", "RD", "LU", "RD", "LU", "UR"],
+  ["LRD", "LU", "RD", "LU", "R", "LR"],
+  ["LU", "RD", "LU", "RD", "LR", "LR"],
+  ["LD", "UD", "RD", "LUD", "O", "RD"],
+];
+
 export default function Play() {
-  //const mazeType = Math.floor(Math.random() * 3) + 1;
-  const mazeType = 1;
+  const mazeType = useSelector<RootState, number>((state) => {
+    return state.control.mazeType;
+  });
+
+  //const mazeType = 1;
   const backgroundStyle = {
     backgroundImage: `url('assets/maze${mazeType}.svg')`,
   };
 
   const dispatch = useDispatch();
+
+  switch (mazeType) {
+    case 1: {
+      for (let i = 0; i < 6; i++) {
+        for (let j = 0; j < 6; j++) {
+          defaultMaze[i][j] = maze1[i][j];
+        }
+      }
+      break;
+    }
+    case 2: {
+      for (let i = 0; i < 6; i++) {
+        for (let j = 0; j < 6; j++) {
+          defaultMaze[i][j] = maze2[i][j];
+        }
+      }
+      break;
+    }
+    case 3: {
+      for (let i = 0; i < 6; i++) {
+        for (let j = 0; j < 6; j++) {
+          defaultMaze[i][j] = maze3[i][j];
+        }
+      }
+      break;
+    }
+    default: {
+      console.log("mazeType error!!");
+    }
+  }
 
   const stack = useSelector<RootState, string[]>((state) => {
     return state.stack.stack;
@@ -135,7 +187,7 @@ export default function Play() {
         </div>
       </div>
       <div style={backgroundStyle} className="mazeContainer">
-        {defaultMap.map((row, r_index) => {
+        {defaultMaze.map((row, r_index) => {
           return row.map((cell, c_index) => (
             <div key={`${r_index} ${c_index}`} className="cell">
               {(() => {
