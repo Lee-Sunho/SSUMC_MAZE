@@ -2,7 +2,16 @@
 import ControlBox from "../components/ControlBox";
 import "./style.css";
 import { resetStack } from "../redux/stackSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../redux/store";
+import { useEffect } from "react";
+import { DESTINATION, STATUS } from "../constants";
+import {
+  IPlayerPosition,
+  setStatusLose,
+  setStatusWin,
+  setPlyaerPosition,
+} from "../redux/controlSlice";
 
 /*
 L - 왼쪽 못감
@@ -20,7 +29,7 @@ const defaultMap: number[][] = [
 ];
 
 const maze1: string[][] = [
-  ["LUD", "UD", "U", "U", "UD", "UR"],
+  ["LUD", "UR", "LU", "U", "UD", "UR"],
   ["LUR", "LR", "LR", "LR", "LU", "RD"],
   ["LR", "LR", "LR", "LR", "L", "UR"],
   ["LD", "O", "RD", "LRD", "LR", "LR"],
@@ -37,9 +46,67 @@ export default function Play() {
 
   const dispatch = useDispatch();
 
+  const stack = useSelector<RootState, string[]>((state) => {
+    return state.stack.stack;
+  });
+
+  const gameStatus = useSelector<RootState, STATUS>((state) => {
+    return state.control.status;
+  });
+
+  const playerPosition = useSelector<RootState, IPlayerPosition>((state) => {
+    return state.control.playerPostion;
+  });
+
   const reset = () => {
     dispatch(resetStack());
   };
+
+  const run = () => {
+    if (gameStatus === STATUS.RUNNING) {
+      let currentY = playerPosition.y;
+      let currentX = playerPosition.x;
+
+      const moveStack = [...stack];
+      const moveInterval = setInterval(() => {
+        if (moveStack.length === 0) {
+          clearInterval(moveInterval);
+          return;
+        }
+
+        const move = moveStack.shift();
+        if (!move) return;
+
+        // 이동 로직
+        if (move === "L" && !maze1[currentY][currentX].includes("L")) {
+          currentX--;
+        } else if (move === "U" && !maze1[currentY][currentX].includes("U")) {
+          currentY--;
+        } else if (move === "R" && !maze1[currentY][currentX].includes("R")) {
+          currentX++;
+        } else if (move === "D" && !maze1[currentY][currentX].includes("D")) {
+          currentY++;
+        } else {
+          // 벽에 부딪혔을 때 게임 실패
+          dispatch(setStatusLose());
+          clearInterval(moveInterval);
+          return;
+        }
+
+        dispatch(setPlyaerPosition({ y: currentY, x: currentX }));
+      }, 500);
+    }
+  };
+
+  useEffect(() => {
+    console.log(playerPosition, gameStatus);
+    if (
+      playerPosition.y === DESTINATION.y &&
+      playerPosition.x === DESTINATION.x
+    ) {
+      dispatch(setStatusWin());
+    }
+  }, [playerPosition]);
 
   return (
     <div className="Play">
@@ -94,7 +161,7 @@ export default function Play() {
       </div>
       <ControlBox />
       <div className="btn_container">
-        <button>출발</button>
+        <button onClick={run}>출발</button>
         <button onClick={reset}>리셋</button>
       </div>
     </div>

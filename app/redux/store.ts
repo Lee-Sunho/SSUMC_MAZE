@@ -1,10 +1,16 @@
 "use client";
 
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import stackSlice from "./stackSlice";
+import controlSlice from "./controlSlice";
+
+const reducers = combineReducers({
+  stack: stackSlice,
+  control: controlSlice,
+});
 
 export const store = configureStore({
-  reducer: stackSlice,
+  reducer: reducers,
   devTools: process.env.NODE_ENV !== "production",
 });
 

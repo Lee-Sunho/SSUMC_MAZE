@@ -1,6 +1,6 @@
 "use client";
 import { ACTION } from "../constants";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { pushStack } from "../redux/stackSlice";
 import { RootState } from "../redux/store";
@@ -21,7 +21,7 @@ const ActionCard = ({ action, onClick }: IProps) => {
 
 const ControlBox = () => {
   const stack = useSelector<RootState, string[]>((state) => {
-    return state.stack;
+    return state.stack.stack;
   });
 
   const dispatch = useDispatch();
