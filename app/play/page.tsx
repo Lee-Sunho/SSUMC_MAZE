@@ -15,6 +15,7 @@ import {
   increaseTimer,
 } from "../redux/controlSlice";
 import Maze from "../components/Maze";
+import { PageWrapper } from "../components/PageWrapper";
 
 export default function Play() {
   const router = useRouter();
@@ -118,19 +119,21 @@ export default function Play() {
   }, [playerPosition]);
 
   return (
-    <div className="Play">
-      <div className="timerContainer">
-        <div className="timer">
-          <img src="/assets/time.svg" />
-          <span>{`${timer}초`}</span>
+    <PageWrapper>
+      <div className="Play">
+        <div className="timerContainer">
+          <div className="timer">
+            <img src="/assets/time.svg" />
+            <span>{`${timer}초`}</span>
+          </div>
+        </div>
+        <Maze />
+        <ControlBox />
+        <div className="btn_container">
+          <button onClick={run}>출발</button>
+          <button onClick={reset}>리셋</button>
         </div>
       </div>
-      <Maze />
-      <ControlBox />
-      <div className="btn_container">
-        <button onClick={run}>출발</button>
-        <button onClick={reset}>리셋</button>
-      </div>
-    </div>
+    </PageWrapper>
   );
 }

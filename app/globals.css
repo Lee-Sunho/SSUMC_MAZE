@@ -19,6 +19,14 @@ body {
   overscroll-behavior: contain;
 }
 
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #cef1f8;
+}
+
 .App {
   position: fixed;
   overflow: hidden;
@@ -45,6 +53,9 @@ body {
 }
 
 @media (max-width: 500px) {
+  body {
+    background-color: #cef1f8;
+  }
   .App {
     background-size: contain;
     width: 100%;
