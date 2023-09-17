@@ -110,9 +110,11 @@
 
 .cardList > div {
   display: flex;
+  align-items: center;
   font-family: "DNFBitBitOTF";
   font-size: 25px;
   font-weight: 400;
+  gap: 5px;
 }
 
 .actionCard {

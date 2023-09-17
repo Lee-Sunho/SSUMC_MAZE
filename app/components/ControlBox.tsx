@@ -38,7 +38,8 @@ const ControlBox = () => {
     <div className="controlArea">
       <div className="stack"></div>
       <div className="cardList">
-        <div>
+        <div className="textArea">
+          <img src="/assets/sticker.svg" />
           <span>행동카드</span>
         </div>
         <ActionCard onClick={push} action={ACTION.UP} />
