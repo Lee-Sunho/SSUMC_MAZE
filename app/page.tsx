@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { startGame } from "./redux/controlSlice";
 import { resetStack } from "./redux/stackSlice";
-import { PageWrapper } from "./components/PageWrapper";
+import { StartWrapper } from "./components/StartWrapper";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
   const onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -13,11 +14,13 @@ export default function Home() {
 
   const dispatch = useDispatch();
   return (
-    <PageWrapper>
+    <StartWrapper>
       <div className="App">
         <div>
           <Link href="/play" replace={true} onContextMenu={onClick}>
-            <button
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileFocus={{ scale: 1.1 }}
               onClick={() => {
                 dispatch(resetStack());
                 dispatch(startGame());
@@ -27,6 +30,6 @@ export default function Home() {
           </Link>
         </div>
       </div>
-    </PageWrapper>
+    </StartWrapper>
   );
 }

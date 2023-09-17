@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const pageEffect = {
   initial: {
@@ -13,14 +13,14 @@ const pageEffect = {
   },
 };
 
-export const PageWrapper = ({ children }: { children: React.ReactNode }) => {
+export const StartWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <motion.div
       className="pageWrapper"
       initial="initial"
       animate="in"
       exit="out"
-      transition={{ duration: 1.2, delay: 0.3 }}
+      transition={{ duration: 1.2 }}
       variants={pageEffect}
     >
       {children}
