@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { pushStack } from "../redux/stackSlice";
 import { RootState } from "../redux/store";
+import { motion } from "framer-motion";
 
 interface IProps {
   action: ACTION;
@@ -12,10 +13,12 @@ interface IProps {
 
 const ActionCard = ({ action, onClick }: IProps) => {
   return (
-    <div
+    <motion.div
+      whileTap={{ scale: 1.1 }}
+      whileHover={{ scale: 1.1 }}
       onClick={() => onClick(action)}
       className={`actionCard ${action}`}
-    ></div>
+    ></motion.div>
   );
 };
 
