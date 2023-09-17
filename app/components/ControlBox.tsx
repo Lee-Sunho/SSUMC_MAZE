@@ -1,6 +1,6 @@
 "use client";
 import { ACTION } from "../constants";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { pushStack } from "../redux/stackSlice";
 import { RootState } from "../redux/store";
@@ -51,4 +51,5 @@ const ControlBox = () => {
   );
 };
 
-export default ControlBox;
+// timer 변경될 때마다 ControlBox 리렌더링 안되도록
+export default React.memo(ControlBox);

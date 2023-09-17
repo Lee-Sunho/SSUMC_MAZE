@@ -14,6 +14,7 @@ export interface IPlayerPosition {
 export interface IControlState {
   status: STATUS;
   mazeType: number;
+  maze: string[][];
   playerPostion: IPlayerPosition;
   timer: number;
 }
@@ -21,9 +22,44 @@ export interface IControlState {
 const initialState: IControlState = {
   status: STATUS.READY,
   mazeType: 0,
+  maze: [
+    ["", "", "", "", "", ""],
+    ["", "", "", "", "", ""],
+    ["", "", "", "", "", ""],
+    ["", "", "", "", "", ""],
+    ["", "", "", "", "", ""],
+    ["", "", "", "", "", ""],
+  ],
   playerPostion: { y: 0, x: 1 },
   timer: 0,
 };
+
+const maze1: string[][] = [
+  ["LUD", "UR", "LU", "U", "UD", "UR"],
+  ["LUR", "LR", "LR", "LR", "LU", "RD"],
+  ["LR", "LR", "LR", "LR", "L", "UR"],
+  ["LD", "O", "RD", "LRD", "LR", "LR"],
+  ["LU", "R", "LUD", "UD", "R", "LRD"],
+  ["LRD", "LD", "UD", "UD", "O", "URD"],
+];
+
+const maze2: string[][] = [
+  ["LUD", "UD", "U", "UD", "U", "URD"],
+  ["LU", "UD", "RD", "LU", "D", "UR"],
+  ["LD", "URD", "LUD", "R", "LUD", "RD"],
+  ["LU", "UD", "UD", "D", "UD", "UR"],
+  ["LRD", "LU", "UD", "UD", "U", "RD"],
+  ["LUD", "D", "UD", "URD", "LD", "URD"],
+];
+
+const maze3: string[][] = [
+  ["LU", "URD", "LU", "UD", "U", "UR"],
+  ["LR", "LU", "RD", "LU", "D", "RD"],
+  ["L", "RD", "LU", "RD", "LU", "UR"],
+  ["LRD", "LU", "RD", "LU", "R", "LR"],
+  ["LU", "RD", "LU", "RD", "LR", "LR"],
+  ["LD", "UD", "RD", "LUD", "O", "RD"],
+];
 
 const controlSlice = createSlice({
   name: "stackSlice",
@@ -35,6 +71,37 @@ const controlSlice = createSlice({
       state.playerPostion = { y: 0, x: 1 };
       state.timer = 0;
       console.log("game start");
+    },
+    setMaze: (state, action) => {
+      switch (action.payload) {
+        case 1: {
+          for (let i = 0; i < 6; i++) {
+            for (let j = 0; j < 6; j++) {
+              state.maze[i][j] = maze1[i][j];
+            }
+          }
+          break;
+        }
+        case 2: {
+          for (let i = 0; i < 6; i++) {
+            for (let j = 0; j < 6; j++) {
+              state.maze[i][j] = maze2[i][j];
+            }
+          }
+          break;
+        }
+        case 3: {
+          for (let i = 0; i < 6; i++) {
+            for (let j = 0; j < 6; j++) {
+              state.maze[i][j] = maze3[i][j];
+            }
+          }
+          break;
+        }
+        default: {
+          console.log("mazeType error!!");
+        }
+      }
     },
     setStatusWin: (state) => {
       state.status = STATUS.WIN;
@@ -55,6 +122,7 @@ const controlSlice = createSlice({
 
 export const {
   startGame,
+  setMaze,
   setStatusWin,
   setStatusLose,
   setPlyaerPosition,
