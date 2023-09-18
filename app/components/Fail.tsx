@@ -1,6 +1,7 @@
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { startGame } from "../redux/controlSlice";
+import { resetStack } from "../redux/stackSlice";
 
 interface IFail {
   record: number;
@@ -11,6 +12,7 @@ const Fail = ({ record }: IFail) => {
   const dispatch = useDispatch();
 
   const retry = () => {
+    dispatch(resetStack());
     dispatch(startGame());
   };
 
