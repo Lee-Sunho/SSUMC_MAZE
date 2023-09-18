@@ -71,6 +71,18 @@
   margin-bottom: 300px;
 }
 
+@media (max-height: 700px) {
+  .hint_wrapper {
+    margin-bottom: 180px;
+  }
+}
+
+@media (max-height: 800px) {
+  .hint_wrapper {
+    margin-bottom: 250px;
+  }
+}
+
 .btn_register {
   width: 308px;
   height: 59px;

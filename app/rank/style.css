@@ -53,6 +53,12 @@
   background-color: #fff;
 }
 
+@media (max-height: 700px) {
+  .rank_background {
+    height: 450px;
+  }
+}
+
 .rank_container {
   box-sizing: border-box;
   margin: 50px 25px;
