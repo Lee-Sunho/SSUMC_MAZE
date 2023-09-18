@@ -1,10 +1,3 @@
-@font-face {
-  font-family: "DNFBitBitOTF";
-  src: url("/fonts/DNFBitBitOTF.otf");
-  font-weight: 400;
-  font-style: normal;
-}
-
 .Play {
   position: fixed;
   overflow: hidden;
