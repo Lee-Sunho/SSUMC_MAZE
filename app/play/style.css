@@ -167,18 +167,10 @@
   justify-content: flex-end;
 }
 
-.succss_container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.success_record {
+.record {
   display: flex;
   justify-content: center;
   align-items: center;
-  /*margin-top: 45px;*/
   color: #1396af;
   text-align: center;
   font-family: "DNFBitBitOTF";
@@ -206,4 +198,49 @@
   margin-left: 5px;
   margin-right: 5px;
   box-shadow: none;
+}
+
+/*fail*/
+
+.fail_background {
+  width: 338px;
+  height: 339px;
+  background-image: url("/assets/alert_gameover_fail.svg");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.failbtn_container {
+  display: flex;
+  gap: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.failbtn_container > button:active {
+  box-shadow: none;
+}
+
+.btn_retry {
+  width: 118px;
+  height: 59px;
+  background-image: url("/assets/btn_retry.svg");
+  background-color: transparent;
+  border-radius: 7px;
+  border: none;
+  box-shadow: 2px 2px 2px 2px gray;
+  transition-duration: 0.3s;
+}
+
+.btn_exit {
+  width: 118px;
+  height: 59px;
+  background-image: url("/assets/btn_exit.svg");
+  background-color: transparent;
+  border-radius: 7px;
+  border: none;
+  box-shadow: 2px 2px 2px 2px gray;
+  transition-duration: 0.3s;
 }

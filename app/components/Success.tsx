@@ -13,7 +13,7 @@ const Success = ({ record }: ISuccess) => {
     <div className="modal_background">
       <div className="success_background">
         <div className="success_container">
-          <div className="success_record">
+          <div className="record">
             <img src="/assets/ic_timer_blue.svg" />
             <span>{record}</span>
           </div>
