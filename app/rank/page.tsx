@@ -64,6 +64,7 @@ const Rank = () => {
   };
 
   const exit = () => {
+    sessionStorage.setItem("hasVisited", "false");
     router.replace("/");
   };
   return (

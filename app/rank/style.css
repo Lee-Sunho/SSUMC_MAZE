@@ -41,8 +41,6 @@
 }
 
 .btn_close:active {
-  margin-left: 5px;
-  margin-right: 5px;
   box-shadow: none;
 }
 
