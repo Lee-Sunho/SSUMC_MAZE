@@ -7,7 +7,7 @@ interface ISuccess {
 const Success = ({ record }: ISuccess) => {
   const router = useRouter();
   const onClick = () => {
-    router.replace("/rank");
+    router.replace("/register");
   };
   return (
     <div className="modal_background">

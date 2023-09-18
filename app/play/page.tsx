@@ -45,7 +45,7 @@ export default function Play() {
     return state.control.maze;
   });
 
-  const timer = useSelector<RootState, STATUS>((state) => {
+  const timer = useSelector<RootState, number>((state) => {
     return state.control.timer;
   });
 

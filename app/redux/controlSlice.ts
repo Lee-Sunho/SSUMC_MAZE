@@ -66,7 +66,7 @@ const controlSlice = createSlice({
   initialState,
   reducers: {
     startGame: (state) => {
-      state.status = STATUS.WIN;
+      state.status = STATUS.RUNNING;
       state.mazeType = Math.floor(Math.random() * 3) + 1;
       state.playerPostion = { y: 0, x: 1 };
       state.timer = 0;

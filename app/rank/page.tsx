@@ -30,7 +30,6 @@ const Record = ({ rank, userName, record }: IRecord) => {
 };
 
 const Rank = () => {
-  document.querySelector(".Rank");
   const [rank, setRank] = useState<IRank[]>([]);
   const apiUrl = "/api/rank";
   const router = useRouter();
@@ -45,23 +44,6 @@ const Rank = () => {
         console.log("API 요청 실패:", error);
       });
   }, []);
-
-  const userName = "mark";
-  const record = 45;
-
-  const data = { userName, record };
-
-  const onClick = () => {
-    //console.log({ userName, record });
-    axios
-      .post(apiUrl, data)
-      .then((response) => {
-        console.log("API 응답 데이터:", response.data);
-      })
-      .catch((error) => {
-        console.log("API 요청 실패:", error);
-      });
-  };
 
   const exit = () => {
     sessionStorage.setItem("hasVisited", "false");
