@@ -25,7 +25,6 @@
 
 .btn_close {
   border-radius: 50%;
-  box-shadow: 2px 2px 2px 2px gray;
   background-image: url("/assets/btn_close.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -37,9 +36,14 @@
   height: 32px;
   top: 30px;
   right: 30px;
+  box-shadow: 2px 2px 2px 2px gray;
+  transition-duration: 0.3s;
 }
 
-.btn_close:hover {
+.btn_close:active {
+  margin-left: 5px;
+  margin-right: 5px;
+  box-shadow: none;
 }
 
 .rank_background {

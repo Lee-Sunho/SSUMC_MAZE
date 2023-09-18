@@ -5,6 +5,7 @@ import "./style.css";
 import { useEffect, useState } from "react";
 import { ObjectId } from "mongodb";
 import { useRouter } from "next/navigation";
+import { PageWrapper } from "../components/PageWrapper";
 
 interface IRecord {
   rank: number;
@@ -66,31 +67,33 @@ const Rank = () => {
     router.replace("/");
   };
   return (
-    <div className="Rank">
-      <img className="img_char_rank" src="/assets/img_char_ranking.svg" />
-      <button onClick={exit} className="btn_close" />
-      <div className="rank_background">
-        <div className="rank_container">
-          <div className="rank_header">
-            <span>RANK</span>
-            <span>NAME</span>
-            <span>TIME</span>
-          </div>
-          <div className="rank_contents">
-            {rank.map((item, index) => {
-              return (
-                <Record
-                  key={index}
-                  rank={index + 1}
-                  userName={item.userName}
-                  record={item.record}
-                />
-              );
-            })}
+    <PageWrapper>
+      <div className="Rank">
+        <img className="img_char_rank" src="/assets/img_char_ranking.svg" />
+        <button onClick={exit} className="btn_close" />
+        <div className="rank_background">
+          <div className="rank_container">
+            <div className="rank_header">
+              <span>RANK</span>
+              <span>NAME</span>
+              <span>TIME</span>
+            </div>
+            <div className="rank_contents">
+              {rank.map((item, index) => {
+                return (
+                  <Record
+                    key={index}
+                    rank={index + 1}
+                    userName={item.userName}
+                    record={item.record}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </PageWrapper>
   );
 };
 

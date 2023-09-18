@@ -142,3 +142,68 @@
   padding-left: 10px;
   padding-right: 10px;
 }
+
+/*success*/
+
+.modal_background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.success_background {
+  width: 338px;
+  height: 339px;
+  background-image: url("/assets/alert_gameover_success.svg");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.succss_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.success_record {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*margin-top: 45px;*/
+  color: #1396af;
+  text-align: center;
+  font-family: "DNFBitBitOTF";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  gap: 30px;
+}
+
+.btn_success {
+  width: 250px;
+  height: 59px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-image: url("/assets/btn_ranking.svg");
+  background-color: transparent;
+  border-radius: 7px;
+  border: none;
+  box-shadow: 2px 2px 2px 2px gray;
+  transition-duration: 0.3s;
+}
+
+.btn_success:active {
+  margin-left: 5px;
+  margin-right: 5px;
+  box-shadow: none;
+}

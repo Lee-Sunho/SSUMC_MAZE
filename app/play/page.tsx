@@ -16,6 +16,7 @@ import {
 } from "../redux/controlSlice";
 import Maze from "../components/Maze";
 import { PageWrapper } from "../components/PageWrapper";
+import Success from "../components/Success";
 
 export default function Play() {
   const router = useRouter();
@@ -133,6 +134,7 @@ export default function Play() {
           <button onClick={run}>출발</button>
           <button onClick={reset}>리셋</button>
         </div>
+        {gameStatus === STATUS.WIN ? <Success record={timer} /> : null}
       </div>
     </PageWrapper>
   );
