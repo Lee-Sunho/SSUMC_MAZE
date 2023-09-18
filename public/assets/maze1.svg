@@ -20,16 +20,16 @@
 <rect x="48" y="52" width="17" height="52" fill="url(#pattern15)"/>
 <rect x="117" y="235" width="16" height="49" transform="rotate(-90 117 235)" fill="url(#pattern16)"/>
 <rect x="103" y="52" width="17" height="52" fill="url(#pattern17)"/>
-<rect x="45" y="229" width="16" height="49" fill="url(#pattern18)"/>
-<rect x="103" y="185" width="16" height="49" fill="url(#pattern19)"/>
-<rect x="103" y="104" width="17" height="37" fill="url(#pattern20)"/>
-<rect x="153" y="179" width="15" height="33" transform="rotate(90 153 179)" fill="url(#pattern21)"/>
-<rect x="155" y="42" width="17" height="52" fill="url(#pattern22)"/>
-<rect x="155" y="94" width="17" height="52" fill="url(#pattern23)"/>
-<rect x="263" y="137" width="16" height="49" fill="url(#pattern24)"/>
-<rect x="263" y="187" width="16" height="49" fill="url(#pattern25)"/>
-<rect x="48" y="104" width="17" height="38" fill="url(#pattern26)"/>
-<rect y="54" width="16" height="61" transform="rotate(-90 0 54)" fill="url(#pattern27)"/>
+<rect x="103" y="185" width="16" height="49" fill="url(#pattern18)"/>
+<rect x="103" y="104" width="17" height="37" fill="url(#pattern19)"/>
+<rect x="153" y="179" width="15" height="33" transform="rotate(90 153 179)" fill="url(#pattern20)"/>
+<rect x="155" y="42" width="17" height="52" fill="url(#pattern21)"/>
+<rect x="155" y="94" width="17" height="52" fill="url(#pattern22)"/>
+<rect x="263" y="137" width="16" height="49" fill="url(#pattern23)"/>
+<rect x="263" y="187" width="16" height="49" fill="url(#pattern24)"/>
+<rect x="48" y="104" width="17" height="38" fill="url(#pattern25)"/>
+<rect y="54" width="16" height="61" transform="rotate(-90 0 54)" fill="url(#pattern26)"/>
+<rect x="48" y="224" width="14" height="54.1333" fill="url(#pattern27)"/>
 <rect x="217" y="58" width="16" height="61" transform="rotate(-90 217 58)" fill="url(#pattern28)"/>
 <rect x="326" y="86" width="16" height="61" transform="rotate(90 326 86)" fill="url(#pattern29)"/>
 <rect x="214" y="179" width="16" height="61" transform="rotate(90 214 179)" fill="url(#pattern30)"/>
@@ -40,6 +40,7 @@
 <rect x="277" y="238" width="16" height="48.8" transform="rotate(-90 277 238)" fill="url(#pattern35)"/>
 <rect x="211" y="107" width="16" height="48.8" fill="url(#pattern36)"/>
 <rect x="213" y="156" width="13" height="36" fill="url(#pattern37)"/>
+<rect x="62" y="234" width="14" height="42.5" transform="rotate(-90 62 234)" fill="url(#pattern38)"/>
 </g>
 <defs>
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -100,31 +101,31 @@
 <use xlink:href="#image4_80_8" transform="matrix(0.00314465 0 0 0.00102683 0 -0.00365807)"/>
 </pattern>
 <pattern id="pattern19" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image4_80_8" transform="matrix(0.00314465 0 0 0.00102683 0 -0.00365807)"/>
-</pattern>
-<pattern id="pattern20" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image5_80_8" transform="matrix(0.00314465 0 0 0.00144484 0 -0.00569437)"/>
 </pattern>
-<pattern id="pattern21" patternContentUnits="objectBoundingBox" width="1" height="1">
+<pattern id="pattern20" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image5_80_8" transform="matrix(0.00314465 0 0 0.00142939 0 -0.000285941)"/>
+</pattern>
+<pattern id="pattern21" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image4_80_8" transform="matrix(0.00314465 0 0 0.00102806 0 -0.00426343)"/>
 </pattern>
 <pattern id="pattern22" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image4_80_8" transform="matrix(0.00314465 0 0 0.00102806 0 -0.00426343)"/>
 </pattern>
 <pattern id="pattern23" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image4_80_8" transform="matrix(0.00314465 0 0 0.00102806 0 -0.00426343)"/>
+<use xlink:href="#image4_80_8" transform="matrix(0.00314465 0 0 0.00102683 0 -0.00365807)"/>
 </pattern>
 <pattern id="pattern24" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image4_80_8" transform="matrix(0.00314465 0 0 0.00102683 0 -0.00365807)"/>
 </pattern>
 <pattern id="pattern25" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image4_80_8" transform="matrix(0.00314465 0 0 0.00102683 0 -0.00365807)"/>
-</pattern>
-<pattern id="pattern26" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image5_80_8" transform="matrix(0.00319328 0 0 0.00142857 -0.00773109 0)"/>
 </pattern>
-<pattern id="pattern27" patternContentUnits="objectBoundingBox" width="1" height="1">
+<pattern id="pattern26" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image6_80_8" transform="scale(0.00314563 0.000825083)"/>
+</pattern>
+<pattern id="pattern27" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image6_80_8" transform="matrix(0.00319032 0 0 0.000825083 -0.00726074 0)"/>
 </pattern>
 <pattern id="pattern28" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image6_80_8" transform="scale(0.00314563 0.000825083)"/>
@@ -155,6 +156,9 @@
 </pattern>
 <pattern id="pattern37" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image8_80_8" transform="matrix(0.00347222 0 0 0.00125386 0 -0.00467785)"/>
+</pattern>
+<pattern id="pattern38" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image7_80_8" transform="matrix(0.00315563 0 0 0.0010395 -0.00174488 0)"/>
 </pattern>
 <clipPath id="clip0_80_8">
 <rect width="327" height="279" fill="white"/>

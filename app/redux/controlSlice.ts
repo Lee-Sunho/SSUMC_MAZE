@@ -39,8 +39,8 @@ const maze1: string[][] = [
   ["LUR", "LR", "LR", "LR", "LU", "RD"],
   ["LR", "LR", "LR", "LR", "L", "UR"],
   ["LD", "O", "RD", "LRD", "LR", "LR"],
-  ["LU", "R", "LUD", "UD", "R", "LRD"],
-  ["LRD", "LD", "UD", "UD", "O", "URD"],
+  ["LU", "RD", "LUD", "UD", "R", "LRD"],
+  ["LRD", "LUD", "UD", "UD", "O", "URD"],
 ];
 
 const maze2: string[][] = [
