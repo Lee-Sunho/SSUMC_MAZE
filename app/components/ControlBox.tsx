@@ -4,7 +4,6 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { pushStack } from "../redux/stackSlice";
 import { RootState } from "../redux/store";
-import { motion } from "framer-motion";
 
 interface IProps {
   action: ACTION;
@@ -13,12 +12,10 @@ interface IProps {
 
 const ActionCard = ({ action, onClick }: IProps) => {
   return (
-    <motion.div
-      whileTap={{ scale: 1.1 }}
-      whileHover={{ scale: 1.1 }}
+    <div
       onClick={() => onClick(action)}
       className={`actionCard ${action}`}
-    ></motion.div>
+    ></div>
   );
 };
 
@@ -40,15 +37,13 @@ const ControlBox = () => {
   return (
     <div className="controlArea">
       <div className="stack"></div>
-      <div className="cardList">
-        <div className="textArea">
-          <img src="/assets/sticker.svg" />
-          <span>행동카드</span>
+      <div className="cardList_background">
+        <div className="cardList">
+          <ActionCard onClick={push} action={ACTION.UP} />
+          <ActionCard onClick={push} action={ACTION.DOWN} />
+          <ActionCard onClick={push} action={ACTION.LEFT} />
+          <ActionCard onClick={push} action={ACTION.RIGHT} />
         </div>
-        <ActionCard onClick={push} action={ACTION.UP} />
-        <ActionCard onClick={push} action={ACTION.DOWN} />
-        <ActionCard onClick={push} action={ACTION.LEFT} />
-        <ActionCard onClick={push} action={ACTION.RIGHT} />
       </div>
     </div>
   );

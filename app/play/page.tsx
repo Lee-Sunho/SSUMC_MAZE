@@ -130,11 +130,11 @@ export default function Play() {
           </div>
         </div>
         <Maze />
-        <ControlBox />
         <div className="btn_container">
-          <button onClick={run}>출발</button>
-          <button onClick={reset}>리셋</button>
+          <button className="btn_reset" onClick={reset} />
+          <button className="btn_run" onClick={run} />
         </div>
+        <ControlBox />
         {gameStatus === STATUS.WIN ? (
           <Success record={timer} />
         ) : gameStatus === STATUS.LOSE ? (
