@@ -52,14 +52,6 @@
   margin-bottom: 35px;
 }
 
-@media (max-height: 700px) {
-  .mazeContainer {
-    width: 275px;
-    height: 240px;
-    background-size: contain;
-  }
-}
-
 .cell {
   display: flex;
   justify-content: center;
@@ -100,12 +92,48 @@
 
 .controlArea {
   display: flex;
-  gap: 30px;
+  gap: 10px;
+}
+
+@media (max-height: 700px) {
+  .mazeContainer {
+    width: 275px;
+    height: 240px;
+    background-size: contain;
+  }
+  .img_char_maze {
+    width: 22px;
+    height: 27px;
+  }
+  .arrow_start {
+    width: 25px;
+    height: 25px;
+  }
+  .arrow_finish {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media (max-height: 500px) {
+  .img_char_maze {
+    width: 20px;
+    height: 25px;
+  }
+
+  .arrow_start {
+    width: 20px;
+    height: 20px;
+  }
+  .arrow_finish {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .stack_wrapper {
   position: relative;
-  width: 38px;
+  width: 30px;
   height: 267px;
   margin-top: 10px;
   background-color: white;
@@ -144,6 +172,9 @@
   margin-top: 26px;
   background-color: transparent;
   background-image: url("/assets/img_card.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .cardList {
@@ -224,6 +255,38 @@
   border-radius: 7px;
   box-shadow: 2px 2px 2px 2px gray;
   transition-duration: 0.3s;
+}
+
+@media (max-height: 700px) {
+  .btn_reset {
+    width: 80px;
+    height: 30px;
+  }
+  .btn_run {
+    width: 80px;
+    height: 30px;
+  }
+  .stack_wrapper {
+    width: 33px;
+    height: 200px;
+  }
+  .controlArea {
+    gap: 15px;
+  }
+  .cardList_background {
+    width: 190px;
+    height: 200px;
+    margin-top: 10px;
+  }
+
+  .cardList {
+    margin-top: 35px;
+  }
+
+  .actionCard {
+    width: 170px;
+    height: 23px;
+  }
 }
 
 /*success*/
