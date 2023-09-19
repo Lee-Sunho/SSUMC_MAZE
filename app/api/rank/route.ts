@@ -9,11 +9,11 @@ export async function GET(req: Request) {
   const db = (await connectDB).db("rank");
 
   try {
-    const result = await db.collection("rank").find().limit(10).toArray();
-    console.log(result);
-    const ranking = result.sort((a: IRank, b: IRank) => {
+    const all = await db.collection("rank").find().toArray();
+    const sorted = all.sort((a: IRank, b: IRank) => {
       return a.record - b.record;
     });
+    const ranking = sorted.slice(0, 10);
     return NextResponse.json(ranking);
   } catch (error) {
     console.log(error);
