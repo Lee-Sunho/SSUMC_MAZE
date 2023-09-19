@@ -53,12 +53,6 @@
   background-color: #fff;
 }
 
-@media (max-height: 700px) {
-  .rank_background {
-    height: 450px;
-  }
-}
-
 .rank_container {
   box-sizing: border-box;
   margin: 50px 25px;
@@ -126,4 +120,30 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+@media (max-height: 700px) {
+  .img_char_rank {
+    width: 60px;
+    height: 100px;
+    margin-top: 20px;
+  }
+  .rank_background {
+    margin-top: 70px;
+    height: 450px;
+    width: 260px;
+  }
+
+  .rank_header {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .record_name {
+    font-size: 18px;
+  }
+
+  .record_record {
+    font-size: 18px;
+  }
 }
