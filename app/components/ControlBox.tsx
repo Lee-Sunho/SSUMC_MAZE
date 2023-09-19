@@ -36,7 +36,27 @@ const ControlBox = () => {
 
   return (
     <div className="controlArea">
-      <div className="stack"></div>
+      <div className="stack_wrapper">
+        <div className="stack">
+          {stack
+            .slice()
+            .reverse()
+            .map((item, index) => {
+              return item === "U" ? (
+                <img
+                  className="img_fruit mandarin"
+                  src="/assets/img_mandarin.svg"
+                />
+              ) : item === "D" ? (
+                <img className="img_fruit" src="/assets/img_purplegrape.svg" />
+              ) : item === "L" ? (
+                <img className="img_fruit" src="/assets/img_greengrape.svg" />
+              ) : item === "R" ? (
+                <img className="img_fruit" src="/assets/img_strawberry.svg" />
+              ) : null;
+            })}
+        </div>
+      </div>
       <div className="cardList_background">
         <div className="cardList">
           <ActionCard onClick={push} action={ACTION.UP} />
