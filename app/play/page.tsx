@@ -70,6 +70,11 @@ export default function Play() {
       const moveInterval = setInterval(() => {
         if (moveStack.length === 0) {
           clearInterval(moveInterval);
+
+          // 스택이 모두 비워졌을 때 도착 위치에 도달하지 않았다면 게임 실패로 판정
+          if (currentY !== DESTINATION.y || currentX !== DESTINATION.x) {
+            dispatch(setStatusLose());
+          }
           return;
         }
 
