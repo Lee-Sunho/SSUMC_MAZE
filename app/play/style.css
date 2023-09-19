@@ -52,6 +52,14 @@
   margin-bottom: 35px;
 }
 
+@media (max-height: 700px) {
+  .mazeContainer {
+    width: 275px;
+    height: 240px;
+    background-size: contain;
+  }
+}
+
 .cell {
   display: flex;
   justify-content: center;
