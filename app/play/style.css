@@ -19,24 +19,29 @@
 
 .timerContainer {
   margin-top: 26px;
-  margin-bottom: 42px;
+  margin-bottom: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.img_timer {
+  width: 25px;
+  height: 25px;
 }
 
 .timer {
   display: flex;
   align-items: center;
   gap: 13px;
-  font-size: 25px;
+  font-size: 22px;
   font-family: "DNFBitBitOTF";
   font-weight: 400;
 }
 
 .mazeContainer {
-  width: 327px;
-  height: 279px;
+  width: 295px;
+  height: 250px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -44,7 +49,7 @@
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
   /*border: 1px solid whitesmoke;*/
-  margin-bottom: 40px;
+  margin-bottom: 35px;
 }
 
 .cell {
@@ -53,30 +58,36 @@
   align-items: center;
 }
 
+.img_char_maze {
+  position: absolute;
+  width: 25px;
+  height: 35px;
+}
+
 .arrow_start {
   position: relative;
-  width: 45px;
-  height: 45px;
-  top: -30px;
+  width: 30px;
+  height: 30px;
+  top: -40px;
 }
 
 .arrow_finish {
   position: relative;
-  width: 45px;
-  height: 45px;
-  top: 30px;
+  width: 30px;
+  height: 30px;
+  top: 40px;
 }
 
 .text_start {
   position: relative;
   top: -40px;
-  left: 10px;
+  left: 5px;
 }
 
 .text_finish {
   position: relative;
   top: 40px;
-  left: -10px;
+  left: -5px;
 }
 
 .controlArea {
@@ -86,7 +97,7 @@
 
 .stack {
   width: 38px;
-  height: 270px;
+  height: 267px;
   margin-top: 10px;
   background-color: white;
   border-radius: 10px;
@@ -153,11 +164,9 @@
   gap: 35px;
 }
 
-/*
-.btn_container > button {
-  padding-left: 10px;
-  padding-right: 10px;
-}*/
+.btn_container > button:active {
+  box-shadow: none;
+}
 
 .btn_reset {
   width: 100px;
@@ -169,6 +178,8 @@
   background-color: transparent;
   border: none;
   border-radius: 7px;
+  box-shadow: 2px 2px 2px 2px gray;
+  transition-duration: 0.3s;
 }
 
 .btn_run {
@@ -181,6 +192,9 @@
   background-size: contain;
   background-color: transparent;
   border: none;
+  border-radius: 7px;
+  box-shadow: 2px 2px 2px 2px gray;
+  transition-duration: 0.3s;
 }
 
 /*success*/

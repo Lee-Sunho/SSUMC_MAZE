@@ -125,7 +125,7 @@ export default function Play() {
       <div className="Play">
         <div className="timerContainer">
           <div className="timer">
-            <img src="/assets/time.svg" />
+            <img className="img_timer" src="/assets/time.svg" />
             <span>{`${timer}초`}</span>
           </div>
         </div>
