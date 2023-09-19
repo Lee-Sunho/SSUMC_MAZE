@@ -23,7 +23,7 @@ const Register = () => {
   };
 
   // 뒤로 가기 했다가 다시 게임화면으로 돌아오는 경우 홈 화면으로 전환
-  useEffect(() => {
+  /*useEffect(() => {
     const temp = sessionStorage.getItem("hasVisited");
     const hasVisited = temp === "true";
 
@@ -33,20 +33,28 @@ const Register = () => {
     } else {
       sessionStorage.setItem("hasVisited", "true");
     }
-  }, [router]);
+  }, [router]);*/
+
+  const clickSound = () => {
+    const sound = new Audio("/audio/click.wav");
+    sound.play();
+  };
 
   const register = () => {
-    const data = { userName, record };
-    console.log(data);
-    axios
-      .post(apiUrl, data)
-      .then((response) => {
-        console.log("API 응답 데이터:", response.data);
-        router.replace("/rank");
-      })
-      .catch((error) => {
-        console.log("API 요청 실패:", error);
-      });
+    clickSound();
+    if (userName.length > 0) {
+      const data = { userName, record };
+      console.log(data);
+      axios
+        .post(apiUrl, data)
+        .then((response) => {
+          console.log("API 응답 데이터:", response.data);
+          router.replace("/rank");
+        })
+        .catch((error) => {
+          console.log("API 요청 실패:", error);
+        });
+    }
   };
 
   return (

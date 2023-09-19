@@ -35,6 +35,11 @@ export default function Play() {
     }
   }, [router]);
 
+  const clickSound = () => {
+    const sound = new Audio("/audio/click.wav");
+    sound.play();
+  };
+
   const dispatch = useDispatch();
 
   const stack = useSelector<RootState, string[]>((state) => {
@@ -58,10 +63,12 @@ export default function Play() {
   });
 
   const reset = () => {
+    clickSound();
     dispatch(resetStack());
   };
 
   const run = () => {
+    clickSound();
     if (gameStatus === STATUS.RUNNING) {
       let currentY = playerPosition.y;
       let currentX = playerPosition.x;

@@ -17,6 +17,7 @@ export interface IControlState {
   maze: string[][];
   playerPostion: IPlayerPosition;
   timer: number;
+  isBgmPlaying: boolean;
 }
 
 const initialState: IControlState = {
@@ -32,6 +33,7 @@ const initialState: IControlState = {
   ],
   playerPostion: { y: 0, x: 1 },
   timer: 0,
+  isBgmPlaying: false,
 };
 
 const maze1: string[][] = [
@@ -49,7 +51,7 @@ const maze2: string[][] = [
   ["LD", "URD", "LUD", "R", "LUD", "RD"],
   ["LU", "UD", "UD", "D", "UD", "UR"],
   ["LRD", "LU", "UD", "UD", "U", "RD"],
-  ["LUD", "D", "UD", "URD", "LD", "URD"],
+  ["LUD", "D", "UD", "URD", "L", "URD"],
 ];
 
 const maze3: string[][] = [
@@ -117,6 +119,9 @@ const controlSlice = createSlice({
     increaseTimer: (state) => {
       state.timer++;
     },
+    toggleBgm: (state) => {
+      state.isBgmPlaying = !state.isBgmPlaying;
+    },
   },
 });
 
@@ -127,5 +132,6 @@ export const {
   setStatusLose,
   setPlyaerPosition,
   increaseTimer,
+  toggleBgm,
 } = controlSlice.actions;
 export default controlSlice.reducer;

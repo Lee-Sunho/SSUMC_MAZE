@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from "./redux/provider";
 import { Inter } from "next/font/google";
 import Head from "next/head";
+import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 

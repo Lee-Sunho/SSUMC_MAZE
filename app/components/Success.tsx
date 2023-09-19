@@ -6,9 +6,23 @@ interface ISuccess {
 
 const Success = ({ record }: ISuccess) => {
   const router = useRouter();
+
+  const clickSound = () => {
+    const sound = new Audio("/audio/click.wav");
+    sound.play();
+  };
+
+  const successSound = () => {
+    const sound = new Audio("/audio/success.wav");
+    sound.play();
+  };
+
   const onClick = () => {
+    clickSound();
     router.replace("/register");
   };
+
+  successSound();
   return (
     <div className="modal_background">
       <div className="success_background">

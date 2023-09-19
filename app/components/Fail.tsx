@@ -11,15 +11,29 @@ const Fail = ({ record }: IFail) => {
   const router = useRouter();
   const dispatch = useDispatch();
 
+  const clickSound = () => {
+    const sound = new Audio("/audio/click.wav");
+    sound.play();
+  };
+
+  const failSound = () => {
+    const sound = new Audio("/audio/fail.mp3");
+    sound.play();
+  };
+
   const retry = () => {
+    clickSound();
     dispatch(resetStack());
     dispatch(startGame());
   };
 
   const exit = () => {
+    clickSound();
     sessionStorage.setItem("hasVisited", "false");
     router.replace("/");
   };
+
+  failSound();
   return (
     <div className="modal_background">
       <div className="fail_background">

@@ -34,8 +34,13 @@ const Rank = () => {
   const apiUrl = "/api/rank";
   const router = useRouter();
 
+  const clickSound = () => {
+    const sound = new Audio("/audio/click.wav");
+    sound.play();
+  };
+
   // 뒤로 가기 했다가 다시 게임화면으로 돌아오는 경우 홈 화면으로 전환
-  useEffect(() => {
+  /*useEffect(() => {
     const temp = sessionStorage.getItem("hasVisited");
     const hasVisited = temp === "true";
 
@@ -45,7 +50,7 @@ const Rank = () => {
     } else {
       sessionStorage.setItem("hasVisited", "true");
     }
-  }, [router]);
+  }, [router]);*/
 
   useEffect(() => {
     axios
@@ -59,6 +64,7 @@ const Rank = () => {
   }, []);
 
   const exit = () => {
+    clickSound();
     sessionStorage.setItem("hasVisited", "false");
     router.replace("/");
   };

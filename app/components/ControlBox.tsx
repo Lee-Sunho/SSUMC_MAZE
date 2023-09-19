@@ -26,7 +26,13 @@ const ControlBox = () => {
 
   const dispatch = useDispatch();
 
+  const clickSound = () => {
+    const sound = new Audio("/audio/click.wav");
+    sound.play();
+  };
+
   const push = (action: ACTION) => {
+    clickSound();
     dispatch(pushStack(action));
   };
 
