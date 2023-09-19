@@ -23,7 +23,7 @@ export default function Home() {
       playMusic();
       dispatch(toggleBgm());
     }
-  }, []); // isPlaying 상태가 변경될 때만 실행
+  }, []);
 
   const playMusic = () => {
     const audio = new Audio("/audio/bgm.mp3");
