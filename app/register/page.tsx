@@ -12,6 +12,7 @@ const Register = () => {
   const apiUrl = "/api/rank";
   const router = useRouter();
   const [userName, setUserName] = useState("");
+  const [isClicked, setIsClicked] = useState(false);
   const record = useSelector<RootState, number>((state) => {
     return state.control.timer;
   });
@@ -45,15 +46,18 @@ const Register = () => {
     if (userName.length > 0) {
       const data = { userName, record };
       console.log(data);
-      axios
-        .post(apiUrl, data)
-        .then((response) => {
-          console.log("API 응답 데이터:", response.data);
-          router.replace("/rank");
-        })
-        .catch((error) => {
-          console.log("API 요청 실패:", error);
-        });
+      if (!isClicked) {
+        setIsClicked(true);
+        axios
+          .post(apiUrl, data)
+          .then((response) => {
+            console.log("API 응답 데이터:", response.data);
+            router.replace("/rank");
+          })
+          .catch((error) => {
+            console.log("API 요청 실패:", error);
+          });
+      }
     }
   };
 
