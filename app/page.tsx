@@ -18,12 +18,14 @@ export default function Home() {
     return state.control.isBgmPlaying;
   });
 
+  /*
   useEffect(() => {
     if (!isPlaying) {
       playMusic();
       dispatch(toggleBgm());
     }
   }, []);
+  */
 
   const playMusic = () => {
     const audio = new Audio("/audio/bgm.mp3");
@@ -58,6 +60,10 @@ export default function Home() {
                 dispatch(resetStack());
                 dispatch(startGame());
                 clickSound();
+                if (!isPlaying) {
+                  playMusic();
+                  dispatch(toggleBgm());
+                }
               }}
               className="btn_start"
             />
