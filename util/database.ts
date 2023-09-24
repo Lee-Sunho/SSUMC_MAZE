@@ -1,7 +1,6 @@
 import { MongoClient } from "mongodb";
 
-const url =
-  "mongodb+srv://sunho0329:FCHvTTocQV0QsQHc@mycluster.gtnfqxz.mongodb.net/";
+const url = process.env.REACT_APP_MONGODB_URI!;
 let connectDB: any;
 
 if (process.env.NODE_ENV === "development") {
