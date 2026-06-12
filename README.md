@@ -2,9 +2,9 @@
 
 ## 📖 프로젝트 소개
   <div>
-    <img src="https://github.com/user-attachments/assets/460e6a0b-9a10-45b2-b322-f2f095078b9d" width="30%"/>
-    <img src="https://github.com/user-attachments/assets/6c33fc51-198b-43a4-acac-2679386ba2e0" width="30%"/>
-    <img src="https://github.com/user-attachments/assets/f145e07b-a513-457c-ad72-45833176ad2a" width="30%"/>
+    <img src="https://github.com/user-attachments/assets/460e6a0b-9a10-45b2-b322-f2f095078b9d" width="220px"/>
+    <img src="https://github.com/user-attachments/assets/6c33fc51-198b-43a4-acac-2679386ba2e0" width="220px"/>
+    <img src="https://github.com/user-attachments/assets/f145e07b-a513-457c-ad72-45833176ad2a" width="220px"/>
   </div>
 
 - 2023 숭실대학교 대동제 UMC 동아리 부스 운영을 위해 제작한 모바일 웹 게임입니다.
