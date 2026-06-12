@@ -6,8 +6,6 @@
     <img src="https://github.com/user-attachments/assets/6c33fc51-198b-43a4-acac-2679386ba2e0" width="30%"/>
     <img src="https://github.com/user-attachments/assets/f145e07b-a513-457c-ad72-45833176ad2a" width="30%"/>
   </div>
-  
-  <br />
 
 - 2023 숭실대학교 대동제 UMC 동아리 부스 운영을 위해 제작한 모바일 웹 게임입니다.
 - 클리어 시 탕후루를 할인해주는 마케팅 수단으로 사용되어 약 300명이 체험하였습니다.
